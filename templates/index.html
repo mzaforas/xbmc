@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="starter-template">
+
+{#    <div class="alert alert-warning" style="margin-top: 20px">test</div>#}
+<div class="well well-sm text-center">
+
+    <div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><span class="glyphicon" style="width: 14px"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon" style="width: 14px"></span></button>
+        </div>
+    </div>
+    <div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+            <button type="button" class="btn btn-default"><a class="glyphicon glyphicon-screenshot" href="{{ url_for('execute', action='playpause') }}"></a></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+        </div>
+    </div>
+    <div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><span class="glyphicon" style="width: 14px"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon" style="width: 14px"></span></button>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-glass"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-film"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-music"></span></button>
+        </div>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
