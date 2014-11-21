@@ -23,7 +23,7 @@ SECRET_KEY = 'development key'
 app.config.from_object(__name__)
 
 # logger
-file_handler = RotatingFileHandler('/var/log/xbmc_remote_control.log', maxBytes=1024*1024)
+file_handler = RotatingFileHandler('/var/log/lighttpd/xbmc_remote_control.log', maxBytes=1024*1024)
 app.logger.addHandler(file_handler)
 
 
