@@ -38,7 +38,7 @@ def execute():
     action = request.args.get('action')
     if action:
         payload = get_payload(action)
-        app.logger.info('payload: "{}"'.format(payload))
+        app.logger.info('request: "{}"'.format(payload))
 
         response = requests.get('http://192.168.1.11:8080/jsonrpc', params=payload)
         app.logger.info('response: "{}"'.format(response))
