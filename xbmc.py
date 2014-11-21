@@ -2,6 +2,7 @@
 
 # all the imports
 import json
+from logging.handlers import RotatingFileHandler
 
 import os
 import os.path
@@ -21,6 +22,10 @@ DEBUG = True
 SECRET_KEY = 'development key'
 app.config.from_object(__name__)
 
+# logger
+file_handler = RotatingFileHandler('/var/log/xbmc_remote_control.log', maxBytes=1024*1024)
+app.logger.addHandler(file_handler)
+
 
 # controllers
 @app.route("/")
@@ -33,8 +38,11 @@ def execute():
     action = request.args.get('action')
     if action:
         payload = get_payload(action)
-        print payload
+        app.logger.info('payload: "{}"'.format(payload))
+
         response = requests.get('http://192.168.1.11:8080/jsonrpc', params=payload)
+        app.logger.info('response: "{}"'.format(response))
+
         if response.status_code != requests.codes.ok:
             flash('Error sending XBMC command')
 
